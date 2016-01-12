@@ -1,0 +1,80 @@
+
+<div class="modal-header">{{title}}</div>
+<form class="form-horizontal" name="task_form" ng-submit="save(task_form)" novalidate>
+
+    <div class="modal-body">
+        <div class="form-group">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <input  type="text" name="name" maxlength="100" ng-required="true" ng-model="task.name" class="search_input" placeholder="Name">
+                <span class="bg-danger" ng-show="errors.nameRequired && task_form.name.$error.required">Field Required</span>
+            </div>   
+            
+        </div>
+        <div class="form-group">           
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <input type="text" name="description" ng-required="true" maxlength="100" ng-model="task.description" class="search_input" placeholder="Description">
+                <span class="bg-danger" ng-show="errors.descriptionRequired && task_form.description.$error.required">Field Required</span>
+            </div>              
+        </div>
+        
+        
+    </div>
+    <div class="modal-footer modal-body visible-md visible-sm visible-lg">
+        <div class="form-group">
+            <div class="col-xs-12 col-sm-12 col-md-12 pull-right">
+                <div class="pull-right">
+                    <input type="submit" class="add-button" value="{{title.toUpperCase()}}">
+                    <input type="submit" class="cancel-button" ng-click="cancel()" value="CANCEL">
+                </div>
+            </div>            
+        </div> 
+    </div>
+
+    <div class="modal-footer modal-body visible-xs ">
+        
+            <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-12 pull-right">
+                    <input type="submit" class="add-button all-row" value="{{title.toUpperCase()}}">       
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-12 pull-right">
+                    <input type="submit" class="cancel-button all-row" ng-click="cancel()" value="CANCEL">
+                </div>
+            </div>
+            
+            
+                        
+         
+    </div>      
+</form>
+
+
+
+<!-- <div class="modal-header">Add</div>
+<form class="form-horizontal" name="task_form" ng-submit="save(task_form)">
+    <div class="container">
+        <div class="form-group">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <input  type="text" required maxlength="100" ng-model="task.name" minlength="5" class="search_input" placeholder="Name">
+            </div>   
+            
+        </div>
+        <div class="form-group">           
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <input type="text" required maxlength="100" ng-model="task.description" minlength="5" class="search_input" placeholder="Description">
+            </div>              
+        </div>
+        
+        <div class="form-group">
+            <div class="col-xs-12 col-sm-12 col-md-12 pull-right">
+                <div class="pull-right">
+                    <input type="submit" class="add-button" value="ADD">
+                    <input type="submit" class="cancel-button" ng-click="cancel()" value="CANCEL">
+                </div>
+            </div> 
+        </div>
+    </div>
+</form>
+
+ -->

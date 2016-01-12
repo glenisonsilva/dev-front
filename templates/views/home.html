@@ -1,0 +1,106 @@
+<div class="row visible-md visible-sm visible-lg">
+	<div class="page-header">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6">
+				 <input type="search" ng-model="searchText" maxlength="100" class="search_input" placeholder="Search...">			
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 hidden-xs">
+				<button type="button" class="pull-right"  ng-click="addTask()"> ADD</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Smartphones -->
+<div class="container visible-xs">
+    <div class="page-header visible-xs">
+        <div class="row">
+            <input type="search" ng-model="searchText" maxlength="100" class="search_input" placeholder="Search...">
+        </div>
+    </div>
+
+    <div ng-hide="tasks.length <= 0 || !obj.length" class="page-header visible-xs">
+        <div class="row"><strong>Total: {{obj.length}} itens</strong></div>
+    </div>
+
+    <div class="table-smar"  ng-repeat="task in obj = (tasks | filter:searchText)">
+        <div class="row">
+            <div class="col-xs-5 table-header"><strong>Done?</strong></div>
+            <div class="col-xs-7">
+                <input type="checkbox" name="done" ng-model="task.done">
+            </div>
+            
+        </div>
+
+        <div class="row dark-row">
+            <div class="col-xs-5 table-header"><strong>Name</strong></div>
+            <div class="col-xs-7">{{task.name}}</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-5 table-header"><strong>Description</strong></div>
+            <div class="col-xs-7">{{task.description}}</div>
+        </div>
+
+        <div class="row dark-row">
+            <div class="col-xs-5 table-header"><strong>Actions</strong></div>
+            <div class="col-xs-7">
+                <i class="fa material-icons" ng-click="editTask($index)">&#xE3C9;</i>
+                <i class="fa material-icons" ng-click="deleteTask($index)">&#xE872;</i>
+            </div>
+        </div>
+
+    </div>
+    <div class="row" ng-show="tasks.length <= 0 || !obj.length">
+        <div class="text-center" >
+            <p>Not Results.</p>
+        </div>
+    </div>
+
+    <div class="row footer visible-xs">
+        <button type="button" class="all-row" ng-click="addTask()"> ADD NEW TASK</button>
+    </div>
+</div>
+
+
+
+
+<!-- Desktop and Tablets -->
+<div class="table-task hidden-xs">
+	<div class="row  table-header">
+		<div class="col-xs-2 col-sm-2 col-md-2 text-center">Done?</div>
+	    <div class="col-xs-3 col-sm-3 col-md-3 text-center">Name</div>
+	    <div class="col-xs-5 col-sm-5 col-md-3 text-center">Description</div>
+	    <div class="col-xs-2 col-sm-2 col-md-4 text-center">Actions</div>
+	</div>
+
+	<div class="row content " ng-repeat="task in obj = (tasks | filter:searchText)">
+		<div class="col-xs-2 col-sm-2 col-md-2 text-center">
+			<input type="checkbox" name="done" ng-model="task.done">
+		</div>
+	    <div class="col-xs-3 col-sm-3 col-md-3 text-center">{{task.name}}</div>
+	    <div class="col-xs-5 col-sm-5 col-md-3 text-center">{{task.description}}</div>
+	    <div class="col-xs-2 col-sm-2 col-md-4 text-center">
+	    	<i class="fa material-icons" ng-click="editTask($index)">&#xE3C9;</i>
+	        <i class="fa material-icons" ng-click="deleteTask($index)">&#xE872;</i>
+	    </div>
+    
+
+	</div>
+    <div class="row" ng-show="tasks.length <= 0 || !obj.length">
+        <div class="text-center" >
+            <p>Not Results.</p>
+        </div>
+    </div>
+	<div ng-hide="tasks.length <= 0 || !obj.length" class="row">
+		<div class="col-xs-1 col-sm-1 col-md-2 text-center"></div>
+	    <div class="col-xs-4 col-sm-4 col-md-3 text-center"></div>
+	    <div class="col-xs-5 col-sm-5 col-md-3 text-center"></div>
+	    <div class="col-xs-2 no-padding-right col-sm-2 col-md-4 text-center"><strong>Total: {{obj.length}} itens</strong></div>
+	</div>
+	
+</div>
+
+
+
+

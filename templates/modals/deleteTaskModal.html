@@ -1,0 +1,20 @@
+<div class="modal-header">{{title}}</div>
+<div class="modal-body">
+    {{message}}
+</div>
+<div class="modal-footer hidden-xs">
+    <input type="submit" class="add-button" ng-click="delete()" value="{{yesButton}}">
+    <input type="submit" class="cancel-button" ng-click="cancel()" value="{{noButton}}">
+</div>
+
+<div class="modal-footer visible-xs">
+	<div class="col-xs-6  text-center">
+		<input type="submit" class="add-button all-row" ng-click="delete()" value="{{yesButton}}">
+	</div>
+	<div class="col-xs-6  text-center">
+		<input type="submit" class="all-row cancel-button " ng-click="cancel()" value="{{noButton}}">
+	</div>
+					
+	   
+</div>
+
